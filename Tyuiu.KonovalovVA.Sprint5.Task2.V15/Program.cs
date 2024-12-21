@@ -22,6 +22,7 @@ namespace Tyuiu.KonovalovVA.Sprint5.Task2.V15
                 }
                 Console.WriteLine();
             }
+            Console.WriteLine("Результат");
             string res = ds.SaveToFileTextData(ar);
             Console.WriteLine(res);
         }
