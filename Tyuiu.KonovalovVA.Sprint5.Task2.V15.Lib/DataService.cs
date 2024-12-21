@@ -20,9 +20,11 @@ namespace Tyuiu.KonovalovVA.Sprint5.Task2.V15.Lib
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                    str += matrix[i, j] + ";";
+                    if (j != matrix.GetLength(1) - 1) str += matrix[i, j] + ";";
+                    else str += matrix[i, j];
                 }
-                File.AppendAllText(path, str+Environment.NewLine);
+                if(i!= matrix.GetLength(0)-1) File.AppendAllText(path, str+Environment.NewLine);
+                else File.AppendAllText(path,str);
                 str = "";
             }
             return path;
