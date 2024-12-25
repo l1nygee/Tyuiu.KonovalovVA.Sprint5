@@ -8,14 +8,13 @@ namespace Tyuiu.KonovalovVA.Sprint5.Task7.V6.Lib
     {
         public string LoadDataAndSave(string path)
         {
-            string ans = "";
-            string pathOutput = Path.Combine(new string[] { Path.GetTempPath(), "OutPutFileTask7.txt" });
+            string pathOutput = $@"{Directory.GetCurrentDirectory()}\OutOutFileTask7.txt";
             FileInfo fileInfo = new FileInfo(pathOutput);
             bool fileExists = fileInfo.Exists;
             if (fileExists) { File.Delete(pathOutput); }
             string stroka = File.ReadAllText(path);
             string result = Regex.Replace(stroka, "[a-zA-Z]", "#");
-            File.WriteAllText(pathOutput, result.ToString());
+            File.WriteAllText(pathOutput, result.ToString()+Environment.NewLine);
             return pathOutput;
         }
     }

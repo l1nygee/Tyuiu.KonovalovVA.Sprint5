@@ -17,7 +17,7 @@ namespace Tyuiu.KonovalovVA.Sprint5.Task7.V6
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
 
-            string res = ds.LoadDataAndSave(pathSave);
+            string res = ds.LoadDataAndSave(path);
             Console.WriteLine(res);
             Console.ReadKey();
         }
