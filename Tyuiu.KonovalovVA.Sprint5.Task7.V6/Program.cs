@@ -9,11 +9,11 @@ namespace Tyuiu.KonovalovVA.Sprint5.Task7.V6
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
-            string path = @"C:\DataSprint5\InPutDataFileTask7V6.txt";
+            string path = "C:\\DataSprint5\\Sprint5Task7\\InPutDataFileTask7V6.txt";
             Console.WriteLine("Данные находятся в файле: " + path);
 
             Console.WriteLine("***************************************************************************");
-            Console.WriteLine("* РЕЗУЛЬТАТ:                                                                                                         *");
+            Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
 
             string res = ds.LoadDataAndSave(path);

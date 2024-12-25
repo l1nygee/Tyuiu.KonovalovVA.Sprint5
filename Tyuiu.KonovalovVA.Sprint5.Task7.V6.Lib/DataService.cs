@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Text;
+using System.Text.RegularExpressions;
 using tyuiu.cources.programming.interfaces.Sprint5;
 namespace Tyuiu.KonovalovVA.Sprint5.Task7.V6.Lib
 {
@@ -6,19 +7,15 @@ namespace Tyuiu.KonovalovVA.Sprint5.Task7.V6.Lib
     {
         public string LoadDataAndSave(string path)
         {
-            string cur;
             string ans = "";
-            try
-            {
-                cur = File.ReadAllText(path);
-                ans = Regex.Replace(cur, "[a-zA-Z]", "#");
-            }
-            catch (IOException ex)
-            {
-                Console.WriteLine($"Ошибка при работе с файлами: {ex.Message}");
-            }
-
-            return ans;
+            string pathOutput = Path.Combine(new string[] { Path.GetTempPath(), "OutPutFileTask7.txt" });
+            FileInfo fileInfo = new FileInfo(pathOutput);
+            bool fileExists = fileInfo.Exists;
+            if (fileExists) { File.Delete(pathOutput); }
+            string stroka = File.ReadAllText(path);
+            string result = Regex.Replace(stroka, "[a-zA-Z]", "#");
+            File.WriteAllText(path, result.ToString());
+            return Convert.ToString(result.ToString());
         }
     }
 }
