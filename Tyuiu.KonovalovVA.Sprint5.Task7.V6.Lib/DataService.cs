@@ -15,8 +15,8 @@ namespace Tyuiu.KonovalovVA.Sprint5.Task7.V6.Lib
             if (fileExists) { File.Delete(pathOutput); }
             string stroka = File.ReadAllText(path);
             string result = Regex.Replace(stroka, "[a-zA-Z]", "#");
-            File.WriteAllText(path, result.ToString());
-            return Convert.ToString(result.ToString());
+            File.WriteAllText(pathOutput, result.ToString());
+            return pathOutput;
         }
     }
 }
