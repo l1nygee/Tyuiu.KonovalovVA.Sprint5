@@ -8,7 +8,7 @@ namespace Tyuiu.KonovalovVA.Sprint5.Task7.V6.Lib
     {
         public string LoadDataAndSave(string path)
         {
-            string pathOutput = $@"{Directory.GetCurrentDirectory()}\OutOutFileTask7.txt";
+            string pathOutput = $@"{Directory.GetCurrentDirectory()}\OutOutFileTask7V6.txt";
             FileInfo fileInfo = new FileInfo(pathOutput);
             bool fileExists = fileInfo.Exists;
             if (fileExists) { File.Delete(pathOutput); }
