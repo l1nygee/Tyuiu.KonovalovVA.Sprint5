@@ -1,3 +1,4 @@
+using Tyuiu.KonovalovVA.Sprint5.Task7.V6.Lib;
 namespace Tyuiu.KonovalovVA.Sprint5.Task7.V6.Test
 {
     [TestClass]
@@ -14,5 +15,5 @@ namespace Tyuiu.KonovalovVA.Sprint5.Task7.V6.Test
             Assert.AreEqual(wait, fileExists);
         }
     }
-    }
+    
 }
