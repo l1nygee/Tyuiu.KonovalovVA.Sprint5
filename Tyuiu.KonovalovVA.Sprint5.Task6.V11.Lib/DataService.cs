@@ -7,6 +7,7 @@ namespace Tyuiu.KonovalovVA.Sprint5.Task6.V11.Lib
         public int LoadFromDataFile(string path)
         {
             int count = 0;
+            int ans = 0;
             using (StreamReader reader = new StreamReader(path))
             {
                 string line;
@@ -15,11 +16,16 @@ namespace Tyuiu.KonovalovVA.Sprint5.Task6.V11.Lib
                     string[] words = line.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries); //Разбиваем строку на слова
                     foreach (string word in words)
                     {
-                        if (word.Length == 6) count++;
+                        for (int i = 0; i < word.Length; i++) 
+                        {
+                            if (word[i] != '.' && word[i] != ',') count++;
+                        }
+                        if (count == 6) ans++;
+                        count = 0;
                     }
                 }
             }
-            return count;
+            return ans;
         }
     }
 }
